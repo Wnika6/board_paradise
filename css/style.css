@@ -1,7 +1,7 @@
 .wrapper {
   margin: 0 auto;
   width: 100%;
-  min-width: 1200px;
+  max-width: 1200px;
 }
 
 .white-block {
@@ -17,7 +17,7 @@
 }
 .white-block-right {
   top: 0;
-  left: -50px;
+  right: -50px;
   transform: skew(45deg);
 }
 
@@ -45,6 +45,37 @@
   transform-origin: left;
 }
 
+.section-heading {
+  position: relative;
+  margin-bottom: 2em;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1755e7;
+  letter-spacing: 2px;
+}
+
+.section-padding {
+  padding: 6em 2em;
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 3.6rem;
+  }
+  .section-padding {
+    padding: 8em 2em;
+  }
+}
+@media (min-width: 992px) {
+  .section-heading {
+    font-size: 4.8rem;
+  }
+  .section-padding {
+    padding: 10em 2em;
+  }
+}
 *,
 ::before,
 ::after {
@@ -108,46 +139,6 @@ body {
   transition-delay: 0.1s;
 }
 
-.header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 2em;
-  height: 75vh;
-  text-align: center;
-  color: #fff;
-  background-image: linear-gradient(45deg, rgba(255, 255, 23, 0.4), rgba(125, 117, 10, 0.4)), url("../img/dice-g60b2c0cc0_640.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-attachment: scroll;
-}
-.header__heading {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 4.8rem;
-  font-weight: 700;
-}
-.header__text {
-  font-size: 1.4rem;
-}
-.header__btn {
-  margin-top: 2em;
-  padding: 0.8em 1.6em;
-  font-size: 1.4rem;
-  background: #fff;
-  border: none;
-  border-radius: 8px;
-  color: #2e2e2e;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.header__btn::before {
-  background-color: #eee;
-}
-
 .nav {
   position: fixed;
   top: 0;
@@ -188,6 +179,117 @@ body {
   transform: scaleY(1);
 }
 
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.nav-items-animation {
+  animation: navItemsAnimation 1s both;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  height: 75vh;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.551), rgba(134, 125, 0, 0.2)), url("../img/dice-g60b2c0cc0_640.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-attachment: scroll;
+}
+.header__heading {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 4.8rem;
+  font-weight: 700;
+}
+.header__text {
+  font-size: 1.4rem;
+}
+.header__btn {
+  margin-top: 2em;
+  padding: 0.8em 1.6em;
+  font-size: 1.4rem;
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  color: #2e2e2e;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.header__btn::before {
+  background-color: #eee;
+}
+
+.games__box {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+}
+.games__img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.games__title {
+  margin-bottom: 0.5em;
+}
+.games__text {
+  font-size: 1.4rem;
+}
+
+.hero-img {
+  position: relative;
+  padding: 10em 2em;
+  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.551), rgba(134, 125, 0, 0.2)), url("../img/dice-small.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.hero-img__title {
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 0.5em;
+  font-size: 4.8rem;
+  font-weight: 700;
+}
+.hero-img__text {
+  padding: 1em 0;
+}
+
+@media (min-width: 576px) {
+  .games__box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .games__box-text {
+    width: 55%;
+  }
+  .games__box-text--right {
+    text-align: right;
+  }
+  .games__box-img {
+    width: 40%;
+  }
+  .games__box-img--right {
+    order: 1;
+  }
+  .games__img {
+    margin-bottom: 0;
+    max-height: 300px;
+  }
+}
 @media (min-width: 768px) {
   .white-block {
     height: 50px;
@@ -202,6 +304,16 @@ body {
   .header__btn {
     font-size: 1.6rem;
   }
+  .games__text {
+    font-size: 1.8rem;
+  }
+  .hero-img {
+    padding: 30rem 2em;
+  }
+  .hero-img hr {
+    margin: 0 auto;
+    width: 70%;
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
@@ -209,9 +321,39 @@ body {
     right: 50px;
   }
   .header {
-    background-image: linear-gradient(45deg, rgba(255, 255, 23, 0.4), rgba(125, 117, 10, 0.4)), url(../img/dice-g95672baf9_1920.jpg);
+    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.551), rgba(134, 125, 0, 0.2)), url(../img/dice-g95672baf9_1920.jpg);
   }
   .header__heading {
     font-size: 10rem;
+  }
+  .nav__item {
+    font-size: 4.8rem;
+  }
+  .games__box {
+    margin: 5em 0;
+  }
+  .games__box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 2.5em;
+  }
+  .games__title {
+    font-size: 3.6rem;
+  }
+  .games__text {
+    font-size: 2.2rem;
+  }
+  .hero-img {
+    padding: 40rem 2em;
+    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.551), rgba(134, 125, 0, 0.2)), url(../img/dice-big.jpg);
+  }
+  .hero-img__title {
+    font-size: 7.2rem;
+  }
+  .hero-img hr {
+    width: 60%;
+    max-width: 900px;
+    color: yellow;
   }
 }/*# sourceMappingURL=style.css.map */
