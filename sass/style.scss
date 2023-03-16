@@ -225,7 +225,7 @@ body {
 		position: relative;
 		margin: 1em 0;
 		height: 450px;
-		color: imports.$dark;
+		color: imports.$pure-white;
 		text-align: center;
 		perspective: 1000px;
 		&:hover {
@@ -248,14 +248,14 @@ body {
 				background-image: imports.$light-blue-gradient, url(../img/cards-sm.jpg);
 			}
 			&--second {
-				background-image: imports.$blue-gradient, url(../img/dd-sm.jpg);
+				background-image: imports.$blue-gradient, url(../img/types-figure-small.jpg);
 			}
 			&--third {
 				background-image: imports.$purple-gradient, url(../img/chess-small.jpg);
 			}
 			&-title {
 				font-family: 'Josefin Sans', sans-serif;
-				font-size: 2.8rem;
+				font-size: 3.8rem;
 			}
 			&-info {
 				position: absolute;
@@ -277,6 +277,7 @@ body {
 			flex-direction: column;
 			justify-content: center;
 			background-image: imports.$blue-gradient-solid;
+			color: imports.$dark;
 			border-radius: 8px;
 			opacity: 0;
 			transform: rotateY(180deg);
@@ -320,8 +321,198 @@ body {
 	}
 }
 
-// RESPONSIVNES
+// SECTION OFFERS
 
+.offers {
+	position: relative;
+	@include imports.heroImages('../img/dice-bag-small.jpg');
+	overflow: hidden;
+	.section-heading {
+		color: imports.$pure-white;
+	}
+	&__option {
+		margin: 1em 0;
+		box-sizing: 5px 5px 10px rgba(47, 40, 40, 0.551);
+		background-color: imports.$pure-white;
+		overflow: hidden;
+
+		&-img {
+			width: 100%;
+			transition: transform 0.3s;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		&-info {
+			padding: 2em;
+			background-color: imports.$pure-white;
+			z-index: 10;
+		}
+		&-heading {
+			margin-bottom: 0.5em;
+			font-size: 2.4rem;
+			font-weight: 300;
+		}
+		&-text {
+			margin-bottom: 0.5rem;
+			font-size: 1.3rem;
+			color: imports.$dark;
+		}
+		&-btn {
+			margin-bottom: 1em;
+			padding: 0.8em;
+			width: 100%;
+			color: imports.$pure-white;
+			background-color: imports.$secondary-color;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+
+			&::before {
+				background-color: imports.$green-color-hover;
+			}
+		}
+	}
+}
+
+// REVIEWS
+
+@media (max-width: 767px) {
+	.reviews.section-padding {
+		padding: 6em 0;
+	}
+}
+
+.reviews {
+	&__box {
+		position: relative;
+		margin: 2em;
+		padding: 2em;
+		border-radius: 8px;
+		box-shadow: 3px 3px 10px rgba(58, 56, 56, 0.8);
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(0.97);
+		}
+	}
+	&__box-img {
+		position: absolute;
+		top: 8%;
+		left: 75%;
+		transform: translate(-50%, -50%);
+		img {
+			width: 80px;
+			height: 80px;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
+	&__box-quote {
+		margin-bottom: 1em;
+		font-size: 3rem;
+		color: imports.$main-color;
+	}
+	&__box-text {
+		margin-bottom: 1em;
+		font-size: 1.4rem;
+		color: imports.$dark;
+	}
+}
+
+// CONTACT
+.contact {
+	position: relative;
+	background-color: imports.$light-white;
+	overflow: hidden;
+	.white-block-left {
+		background-color: imports.$dark;
+	}
+	&__form,
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+	&__form-label {
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+	}
+	&__form-input {
+		@include imports.contactForm;
+	}
+	&__form-textarea {
+		@include imports.contactForm;
+		resize: vertical;
+		// max-width: 100%;
+		// min-width: 100%;
+		// width: 100%;
+		// min-height: 150px;
+	}
+	&__form-btn {
+		align-self: flex-end;
+		padding: 1em;
+		width: 100%;
+		max-width: 300px;
+		color: imports.$dark;
+		border: none;
+		border-radius: 8px;
+		background-color: imports.$secondary-color;
+		cursor: pointer;
+
+		&::before {
+			background-color: imports.$green-color-hover;
+		}
+	}
+}
+
+// FOOTER
+
+.footer {
+	color: imports.$pure-white;
+	background-color: imports.$dark;
+
+	.wrapper {
+		padding: 6em 2em 2em;
+	}
+	&__box {
+		font-size: 1.4rem;
+		.fa-solid {
+			padding: 0.2em;
+			columns: imports.$secondary-color;
+		}
+	}
+	&__box-desktop {
+		display: none;
+	}
+	&__box-title {
+		margin-bottom: 1em;
+		font-size: 1rem;
+	}
+	&__box-social {
+		margin: 2em 0 1em;
+	}
+	&__box-link {
+		padding: 0 0.3em;
+		font-size: 3.6rem;
+		color: imports.$pure-white;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:hover {
+			color: imports.$light-white;
+		}
+	}
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
+	}
+}
+
+// MEDIA
 @media (min-width: 576px) {
 	.about-us {
 		&__box {
@@ -343,6 +534,34 @@ body {
 		&__img {
 			margin-bottom: 0;
 			max-height: 300px;
+		}
+	}
+	.offers {
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			width: 100%;
+
+			&-img {
+				width: 50%;
+				height: auto;
+
+				&--right {
+					order: 1;
+				}
+			}
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			&-heading {
+				margin-bottom: 0.5em;
+				font-size: 3.6rem;
+			}
+			&btn {
+				padding: 1em;
+			}
 		}
 	}
 }
@@ -384,6 +603,35 @@ body {
 		&__card {
 			margin: 1em;
 			width: 45%;
+		}
+	}
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__box-desktop {
+			display: block;
+		}
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+			&:first-child {
+				width: 50%;
+			}
+		}
+		&__box-title {
+			font-size: 2.4rem;
+		}
+		&__box-list {
+			list-style: none;
+		}
+		&__box-list-item {
+			margin-bottom: 1em;
+			a {
+				color: imports.$light-white;
+				text-decoration: none;
+			}
 		}
 	}
 }
@@ -433,6 +681,19 @@ body {
 		hr {
 			width: 50%;
 			max-width: 900px;
+		}
+	}
+	.offers {
+		background-image: imports.$blue-gradient, url(../img/dice-bag-big.jpg);
+
+		&__option {
+			&-img {
+				object-fit: cover;
+				height: 300px;
+			}
+		}
+		&-text {
+			font-size: 1.4rem;
 		}
 	}
 }

@@ -50,7 +50,6 @@
   margin-bottom: 2em;
   font-size: 3rem;
   font-weight: 300;
-  text-transform: uppercase;
   text-align: center;
   color: #2e2e2e;
   letter-spacing: 2px;
@@ -286,7 +285,7 @@ body {
   position: relative;
   margin: 1em 0;
   height: 450px;
-  color: #2e2e2e;
+  color: #fff;
   text-align: center;
   perspective: 1000px;
 }
@@ -309,14 +308,14 @@ body {
   background-image: linear-gradient(45deg, rgba(78, 255, 8, 0.641), rgba(86, 255, 8, 0.175)), url(../img/cards-sm.jpg);
 }
 .games__card-img--second {
-  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.7), rgba(134, 125, 0, 0.3)), url(../img/dd-sm.jpg);
+  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.7), rgba(134, 125, 0, 0.3)), url(../img/types-figure-small.jpg);
 }
 .games__card-img--third {
   background-image: linear-gradient(45deg, rgba(214, 115, 10, 0.644), rgba(255, 55, 0, 0.036)), url(../img/chess-small.jpg);
 }
 .games__card-img-title {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 2.8rem;
+  font-size: 3.8rem;
 }
 .games__card-img-info {
   position: absolute;
@@ -337,6 +336,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background-image: linear-gradient(45deg, rgb(225, 203, 39), rgb(234, 232, 94));
+  color: #2e2e2e;
   border-radius: 8px;
   opacity: 0;
   transform: rotateY(180deg);
@@ -382,6 +382,188 @@ body {
   background-color: #bd259a;
 }
 
+.offers {
+  position: relative;
+  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.7), rgba(134, 125, 0, 0.3)), url("../img/dice-bag-small.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.offers .section-heading {
+  color: #fff;
+}
+.offers__option {
+  margin: 1em 0;
+  box-sizing: 5px 5px 10px rgba(47, 40, 40, 0.551);
+  background-color: #fff;
+  overflow: hidden;
+}
+.offers__option-img {
+  width: 100%;
+  transition: transform 0.3s;
+}
+.offers__option-img:hover {
+  transform: scale(1.1);
+}
+.offers__option-info {
+  padding: 2em;
+  background-color: #fff;
+  z-index: 10;
+}
+.offers__option-heading {
+  margin-bottom: 0.5em;
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+.offers__option-text {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #2e2e2e;
+}
+.offers__option-btn {
+  margin-bottom: 1em;
+  padding: 0.8em;
+  width: 100%;
+  color: #fff;
+  background-color: rgba(227, 206, 21, 0.7568627451);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.offers__option-btn::before {
+  background-color: #bd259a;
+}
+
+@media (max-width: 767px) {
+  .reviews.section-padding {
+    padding: 6em 0;
+  }
+}
+.reviews__box {
+  position: relative;
+  margin: 2em;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgba(58, 56, 56, 0.8);
+  transition: transform 0.3s;
+}
+.reviews__box:hover {
+  transform: scale(0.97);
+}
+.reviews__box-img {
+  position: absolute;
+  top: 8%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+.reviews__box-img img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.reviews__box-quote {
+  margin-bottom: 1em;
+  font-size: 3rem;
+  color: rgba(219, 219, 30, 0.937254902);
+}
+.reviews__box-text {
+  margin-bottom: 1em;
+  font-size: 1.4rem;
+  color: #2e2e2e;
+}
+
+.contact {
+  position: relative;
+  background-color: #eee;
+  overflow: hidden;
+}
+.contact .white-block-left {
+  background-color: #2e2e2e;
+}
+.contact__form, .contact__form-top {
+  display: flex;
+  flex-direction: column;
+}
+.contact__form-label {
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+.contact__form-input {
+  margin-bottom: 2em;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
+}
+.contact__form-textarea {
+  margin-bottom: 2em;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  resize: vertical;
+}
+.contact__form-btn {
+  align-self: flex-end;
+  padding: 1em;
+  width: 100%;
+  max-width: 300px;
+  color: #2e2e2e;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(227, 206, 21, 0.7568627451);
+  cursor: pointer;
+}
+.contact__form-btn::before {
+  background-color: #bd259a;
+}
+
+.footer {
+  color: #fff;
+  background-color: #2e2e2e;
+}
+.footer .wrapper {
+  padding: 6em 2em 2em;
+}
+.footer__box {
+  font-size: 1.4rem;
+}
+.footer__box .fa-solid {
+  padding: 0.2em;
+  -moz-columns: rgba(227, 206, 21, 0.7568627451);
+       columns: rgba(227, 206, 21, 0.7568627451);
+}
+.footer__box-desktop {
+  display: none;
+}
+.footer__box-title {
+  margin-bottom: 1em;
+  font-size: 1rem;
+}
+.footer__box-social {
+  margin: 2em 0 1em;
+}
+.footer__box-link {
+  padding: 0 0.3em;
+  font-size: 3.6rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer__box-link:first-child {
+  padding-left: 0;
+}
+.footer__box-link:hover {
+  color: #eee;
+}
+.footer__bottom-text {
+  padding: 2em;
+  text-align: center;
+}
+
 @media (min-width: 576px) {
   .about-us__box {
     flex-direction: row;
@@ -402,6 +584,30 @@ body {
   .about-us__img {
     margin-bottom: 0;
     max-height: 300px;
+  }
+  .offers__option {
+    display: flex;
+    margin: 2em 0;
+    width: 100%;
+  }
+  .offers__option-img {
+    width: 50%;
+    height: auto;
+  }
+  .offers__option-img--right {
+    order: 1;
+  }
+  .offers__option-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .offers__option-heading {
+    margin-bottom: 0.5em;
+    font-size: 3.6rem;
+  }
+  .offers__optionbtn {
+    padding: 1em;
   }
 }
 @media (min-width: 768px) {
@@ -436,6 +642,33 @@ body {
   .games__card {
     margin: 1em;
     width: 45%;
+  }
+  .footer__boxes {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer__box-desktop {
+    display: block;
+  }
+  .footer__box {
+    margin: 0 2em;
+    width: 25%;
+  }
+  .footer__box:first-child {
+    width: 50%;
+  }
+  .footer__box-title {
+    font-size: 2.4rem;
+  }
+  .footer__box-list {
+    list-style: none;
+  }
+  .footer__box-list-item {
+    margin-bottom: 1em;
+  }
+  .footer__box-list-item a {
+    color: #eee;
+    text-decoration: none;
   }
 }
 @media (min-width: 992px) {
@@ -480,6 +713,17 @@ body {
   .hero-img hr {
     width: 50%;
     max-width: 900px;
+  }
+  .offers {
+    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.7), rgba(134, 125, 0, 0.3)), url(../img/dice-bag-big.jpg);
+  }
+  .offers__option-img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 300px;
+  }
+  .offers-text {
+    font-size: 1.4rem;
   }
 }
 @media (min-width: 1100px) {
