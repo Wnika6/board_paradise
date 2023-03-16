@@ -11,7 +11,7 @@
   background-color: #fff;
 }
 .white-block-left {
-  bottom: 0;
+  bottom: -1px;
   left: -50px;
   transform: skew(45deg);
 }
@@ -201,7 +201,7 @@ body {
   height: 75vh;
   text-align: center;
   color: #fff;
-  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.6), rgba(134, 125, 0, 0.2)), url("../img/dice-g60b2c0cc0_640.jpg");
+  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.7), rgba(134, 125, 0, 0.3)), url("../img/dice-g60b2c0cc0_640.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -231,34 +231,34 @@ body {
   background-color: rgba(227, 206, 21, 0.7568627451);
 }
 
-.games .section-heading {
+.about-us .section-heading {
   text-transform: lowercase;
 }
-.games .section-heading span {
+.about-us .section-heading span {
   text-transform: uppercase;
   font-weight: bold;
   color: rgba(219, 219, 30, 0.937254902);
 }
-.games__box {
+.about-us__box {
   display: flex;
   flex-direction: column;
   margin: 2em 0;
 }
-.games__img {
+.about-us__img {
   width: 100%;
   margin-bottom: 1em;
 }
-.games__title {
+.about-us__title {
   margin-bottom: 0.5em;
 }
-.games__text {
+.about-us__text {
   font-size: 1.4rem;
 }
 
 .hero-img {
   position: relative;
   padding: 10em 2em;
-  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.6), rgba(134, 125, 0, 0.2)), url("../img/dices-falling-xl.jpg");
+  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.7), rgba(134, 125, 0, 0.3)), url("../img/dices-falling-xl.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -278,28 +278,128 @@ body {
   font-weight: 700;
 }
 .hero-img hr {
-  color: rgba(219, 219, 30, 0.937254902);
   height: 0.8rem;
+  color: rgba(219, 219, 30, 0.937254902);
+}
+
+.games__card {
+  position: relative;
+  margin: 1em 0;
+  height: 450px;
+  color: #2e2e2e;
+  text-align: center;
+  perspective: 1000px;
+}
+.games__card:hover .games__card-img {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.games__card:hover .games__card-info {
+  transform: rotateY(0);
+  opacity: 1;
+}
+.games__card-img {
+  padding: 2em;
+  height: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  transition: transform 1s, opacity 1s;
+}
+.games__card-img--first {
+  background-image: linear-gradient(45deg, rgba(78, 255, 8, 0.641), rgba(86, 255, 8, 0.175)), url(../img/cards-sm.jpg);
+}
+.games__card-img--second {
+  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.7), rgba(134, 125, 0, 0.3)), url(../img/dd-sm.jpg);
+}
+.games__card-img--third {
+  background-image: linear-gradient(45deg, rgba(214, 115, 10, 0.644), rgba(255, 55, 0, 0.036)), url(../img/chess-small.jpg);
+}
+.games__card-img-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.8rem;
+}
+.games__card-img-info {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.8rem;
+}
+.games__card-img-info i {
+  margin-right: 0.3em;
+}
+.games__card-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(45deg, rgb(225, 203, 39), rgb(234, 232, 94));
+  border-radius: 8px;
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: transform 1s, opacity 1s;
+}
+.games__card-info-title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 1.2em;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.8rem;
+}
+.games__card-info-list {
+  margin: 0 auto;
+  width: 70%;
+  list-style: none;
+}
+.games__card-info-list-item {
+  padding: 1em;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #eee;
+}
+.games__card-info-list-item:last-child {
+  border-bottom: none;
+}
+.games__card-info-btn {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2em;
+  padding: 1em;
+  border-radius: 8px;
+  width: 80%;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.games__card-info-btn::before {
+  background-color: #bd259a;
 }
 
 @media (min-width: 576px) {
-  .games__box {
+  .about-us__box {
     flex-direction: row;
     justify-content: space-between;
   }
-  .games__box-text {
+  .about-us__box-text {
     width: 55%;
   }
-  .games__box-text--right {
+  .about-us__box-text--right {
     text-align: right;
   }
-  .games__box-img {
+  .about-us__box-img {
     width: 40%;
   }
-  .games__box-img--right {
+  .about-us__box-img--right {
     order: 1;
   }
-  .games__img {
+  .about-us__img {
     margin-bottom: 0;
     max-height: 300px;
   }
@@ -318,7 +418,7 @@ body {
   .header__btn {
     font-size: 1.6rem;
   }
-  .games__text {
+  .about-us__text {
     font-size: 1.8rem;
   }
   .hero-img {
@@ -326,7 +426,16 @@ body {
   }
   .hero-img hr {
     margin: 0 auto;
-    width: 70%;
+    width: 60%;
+  }
+  .games__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .games__card {
+    margin: 1em;
+    width: 45%;
   }
 }
 @media (min-width: 992px) {
@@ -335,7 +444,7 @@ body {
     right: 50px;
   }
   .header {
-    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.6), rgba(134, 125, 0, 0.2)), url(../img/dice-g95672baf9_1920.jpg);
+    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.7), rgba(134, 125, 0, 0.3)), url(../img/dice-g95672baf9_1920.jpg);
   }
   .header__heading {
     font-size: 10rem;
@@ -346,24 +455,24 @@ body {
   .header .nav__item {
     font-size: 4.8rem;
   }
-  .header .games__box {
+  .about-us__box {
     margin: 5em 0;
   }
-  .header .games__box-text {
+  .about-us__box-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     margin-bottom: 2.5em;
   }
-  .header .games__title {
+  .about-us__title {
     font-size: 3.6rem;
   }
-  .header .games__text {
+  .about-us__text {
     font-size: 2.2rem;
   }
   .hero-img {
     padding: 40rem 2em;
-    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.6), rgba(134, 125, 0, 0.2)), url(../img/dices-falling-xl.jpg);
+    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.7), rgba(134, 125, 0, 0.3)), url(../img/dices-falling-xl.jpg);
   }
   .hero-img__title {
     font-size: 7.2rem;
@@ -371,5 +480,10 @@ body {
   .hero-img hr {
     width: 50%;
     max-width: 900px;
+  }
+}
+@media (min-width: 1100px) {
+  .games__card {
+    width: 30%;
   }
 }/*# sourceMappingURL=style.css.map */

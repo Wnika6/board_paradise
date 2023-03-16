@@ -166,9 +166,9 @@ body {
 	}
 }
 
-// SECTION GAMES
+// SECTION ABOUT-US
 
-.games {
+.about-us {
 	.section-heading {
 		text-transform: lowercase;
 		span {
@@ -213,15 +213,117 @@ body {
 		font-weight: 700;
 	}
 	hr {
-		color: imports.$main-color;
 		height: 0.8rem;
+		color: imports.$main-color;
 	}
 }
 
-// RESONSIVNES
+// SECTION GAMES
+
+.games {
+	&__card {
+		position: relative;
+		margin: 1em 0;
+		height: 450px;
+		color: imports.$dark;
+		text-align: center;
+		perspective: 1000px;
+		&:hover {
+			.games__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+			.games__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+		&-img {
+			padding: 2em;
+			height: 100%;
+			border-radius: 8px;
+			background-size: cover;
+			transition: transform 1s, opacity 1s;
+			&--first {
+				background-image: imports.$light-blue-gradient, url(../img/cards-sm.jpg);
+			}
+			&--second {
+				background-image: imports.$blue-gradient, url(../img/dd-sm.jpg);
+			}
+			&--third {
+				background-image: imports.$purple-gradient, url(../img/chess-small.jpg);
+			}
+			&-title {
+				font-family: 'Josefin Sans', sans-serif;
+				font-size: 2.8rem;
+			}
+			&-info {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+				font-size: 1.8rem;
+				i {
+					margin-right: 0.3em;
+				}
+			}
+		}
+		&-info {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			background-image: imports.$blue-gradient-solid;
+			border-radius: 8px;
+			opacity: 0;
+			transform: rotateY(180deg);
+			transition: transform 1s, opacity 1s;
+			&-title {
+				@include imports.gamesCardStyles;
+				top: 1.2em;
+				font-family: 'Josefin Sans', sans-serif;
+				font-size: 2.8rem;
+			}
+			&-list {
+				margin: 0 auto;
+				width: 70%;
+				list-style: none;
+				&-item {
+					padding: 1em;
+					font-size: 1.4rem;
+					border-bottom: 1px solid imports.$light-white;
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+			&-btn {
+				@include imports.gamesCardStyles;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 2em;
+				padding: 1em;
+				border-radius: 8px;
+				width: 80%;
+				border: none;
+				background-color: imports.$pure-white;
+				cursor: pointer;
+				&::before {
+					background-color: imports.$green-color-hover;
+				}
+			}
+		}
+	}
+}
+
+// RESPONSIVNES
 
 @media (min-width: 576px) {
-	.games {
+	.about-us {
 		&__box {
 			flex-direction: row;
 			justify-content: space-between;
@@ -261,7 +363,7 @@ body {
 			font-size: 1.6rem;
 		}
 	}
-	.games {
+	.about-us {
 		&__text {
 			font-size: 1.8rem;
 		}
@@ -270,7 +372,18 @@ body {
 		padding: 30rem 2em;
 		hr {
 			margin: 0 auto;
-			width: 70%;
+			width: 60%;
+		}
+	}
+	.games {
+		&__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		&__card {
+			margin: 1em;
+			width: 45%;
 		}
 	}
 }
@@ -292,24 +405,25 @@ body {
 				font-size: 4.8rem;
 			}
 		}
-		.games {
-			&__box {
-				margin: 5em 0;
-				&-text {
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-end;
-					margin-bottom: 2.5em;
-				}
-			}
-			&__title {
-				font-size: 3.6rem;
-			}
-			&__text {
-				font-size: 2.2rem;
+	}
+	.about-us {
+		&__box {
+			margin: 5em 0;
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				margin-bottom: 2.5em;
 			}
 		}
+		&__title {
+			font-size: 3.6rem;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
 	}
+
 	.hero-img {
 		padding: 40rem 2em;
 		background-image: imports.$blue-gradient, url(../img/dices-falling-xl.jpg);
@@ -319,6 +433,14 @@ body {
 		hr {
 			width: 50%;
 			max-width: 900px;
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.games {
+		&__card {
+			width: 30%;
 		}
 	}
 }
