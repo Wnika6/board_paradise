@@ -52,7 +52,7 @@
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
-  color: #1755e7;
+  color: #2e2e2e;
   letter-spacing: 2px;
 }
 
@@ -149,7 +149,7 @@ body {
   height: 100vh;
   width: 100%;
   transition: 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
-  background-image: linear-gradient(45deg, rgb(226, 209, 73), rgb(142, 140, 11));
+  background-image: linear-gradient(45deg, rgb(225, 203, 39), rgb(234, 232, 94));
   z-index: 100;
 }
 .nav--active {
@@ -201,7 +201,7 @@ body {
   height: 75vh;
   text-align: center;
   color: #fff;
-  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.551), rgba(134, 125, 0, 0.2)), url("../img/dice-g60b2c0cc0_640.jpg");
+  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.6), rgba(134, 125, 0, 0.2)), url("../img/dice-g60b2c0cc0_640.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -213,7 +213,7 @@ body {
   font-weight: 700;
 }
 .header__text {
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 .header__btn {
   margin-top: 2em;
@@ -228,9 +228,17 @@ body {
   cursor: pointer;
 }
 .header__btn::before {
-  background-color: #eee;
+  background-color: rgba(227, 206, 21, 0.7568627451);
 }
 
+.games .section-heading {
+  text-transform: lowercase;
+}
+.games .section-heading span {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(219, 219, 30, 0.937254902);
+}
 .games__box {
   display: flex;
   flex-direction: column;
@@ -250,7 +258,7 @@ body {
 .hero-img {
   position: relative;
   padding: 10em 2em;
-  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.551), rgba(134, 125, 0, 0.2)), url("../img/dice-small.jpg");
+  background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.6), rgba(134, 125, 0, 0.2)), url("../img/dices-falling-xl.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -265,7 +273,13 @@ body {
   font-weight: 700;
 }
 .hero-img__text {
-  padding: 1em 0;
+  padding: 0.5em 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.hero-img hr {
+  color: rgba(219, 219, 30, 0.937254902);
+  height: 0.8rem;
 }
 
 @media (min-width: 576px) {
@@ -299,7 +313,7 @@ body {
     font-size: 6.6rem;
   }
   .header__text {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
   .header__btn {
     font-size: 1.6rem;
@@ -321,39 +335,41 @@ body {
     right: 50px;
   }
   .header {
-    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.551), rgba(134, 125, 0, 0.2)), url(../img/dice-g95672baf9_1920.jpg);
+    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.6), rgba(134, 125, 0, 0.2)), url(../img/dice-g95672baf9_1920.jpg);
   }
   .header__heading {
     font-size: 10rem;
   }
-  .nav__item {
+  .header__text {
+    font-size: 4rem;
+  }
+  .header .nav__item {
     font-size: 4.8rem;
   }
-  .games__box {
+  .header .games__box {
     margin: 5em 0;
   }
-  .games__box-text {
+  .header .games__box-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     margin-bottom: 2.5em;
   }
-  .games__title {
+  .header .games__title {
     font-size: 3.6rem;
   }
-  .games__text {
+  .header .games__text {
     font-size: 2.2rem;
   }
   .hero-img {
     padding: 40rem 2em;
-    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.551), rgba(134, 125, 0, 0.2)), url(../img/dice-big.jpg);
+    background-image: linear-gradient(45deg, rgba(255, 255, 0, 0.6), rgba(134, 125, 0, 0.2)), url(../img/dices-falling-xl.jpg);
   }
   .hero-img__title {
     font-size: 7.2rem;
   }
   .hero-img hr {
-    width: 60%;
+    width: 50%;
     max-width: 900px;
-    color: yellow;
   }
 }/*# sourceMappingURL=style.css.map */
