@@ -125,6 +125,11 @@ body {
 	animation: navItemsAnimation 1s both;
 }
 
+.dark-bars-color,
+.dark-bars-color::after,
+.dark-bars-color::before {
+	background-color: imports.$secondary-color;
+}
 // HEADER
 
 .header {
@@ -543,7 +548,7 @@ body {
 			width: 100%;
 
 			&-img {
-				width: 50%;
+				// width: 60%;
 				height: auto;
 
 				&--right {
@@ -551,6 +556,7 @@ body {
 				}
 			}
 			&-info {
+				width: 40%;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
